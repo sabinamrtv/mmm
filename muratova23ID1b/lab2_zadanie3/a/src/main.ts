@@ -1,13 +1,19 @@
-function findMaxCount(): void {
-    const input: string = (document.getElementById("inputNumbers") as HTMLInputElement).value;
+function findMaxCount(): number {
+    const inputElement = document.getElementById("inputNumbers") as HTMLInputElement;
+    const inputString = inputElement.value;
+    const numbers: number[] = inputString.split(" ")
+        .map(num => parseFloat(num.trim()))
+        .filter(num => !isNaN(num));
 
-    const numbers: number[] = input.split(" ").map(Number);
-    if (numbers.length === 0 || numbers.some(isNaN)) {
-        (document.getElementById("result") as HTMLParagraphElement).textContent = "Пожалуйста, введите только числа, разделённые пробелами.";
+    if (numbers.length === 0) {
+        const resultElement = document.getElementById("result") as HTMLParagraphElement;
+        resultElement.textContent = "Пожалуйста, введите только числа, разделённые пробелами.";
         return;
     }
-    const maxNumber: number = Math.max(...numbers);
-    const countMax: number = numbers.filter(num => num === maxNumber).length;
 
-    (document.getElementById("result") as HTMLParagraphElement).textContent = `Максимальное число: ${maxNumber}. Совпадений: ${countMax}.`;
+    const maxNumber = Math.max(...numbers);
+    const countMax = numbers.filter(num => num === maxNumber).length;
+    const resultElement = document.getElementById("result") as HTMLParagraphElement;
+
+    resultElement.textContent = `Максимальное число: ${maxNumber}. Совпадений: ${countMax}.`;
 }
