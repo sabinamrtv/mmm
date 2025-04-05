@@ -9,5 +9,5 @@ function findMaxCount(): void {
     const maxNumber: number = Math.max(...numbers);
     const countMax: number = numbers.filter(num => num === maxNumber).length;
 
-    (document.getElementById("result") as HTMLParagraphElement).textContent = `Максимальное число: ${maxNumber}. Оно встречается ${countMax} раз(а).`;
+    (document.getElementById("result") as HTMLParagraphElement).textContent = `Максимальное число: ${maxNumber}. Совпадений: ${countMax}.`;
 }
