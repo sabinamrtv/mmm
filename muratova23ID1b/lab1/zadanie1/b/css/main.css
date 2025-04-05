@@ -1,0 +1,83 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-image: url("https://www.zastavki.com/pictures/originals/2021Nature___Flowers_Pink_flowers_delicate_lily_close_up_150031_.jpg");
+  background-size: cover;
+  /* Заставляет изображение занимать весь экран */
+  background-position: center;
+  /* Центрирует изображение */
+  color: #5e6623;
+  /* Цвет текста */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  background-repeat: no-repeat;
+  /* Не повторять изображение */
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #893941;
+  /* Цвет заголовка */
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid #893941;
+  /* Цвет рамки */
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 250px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #cb7885;
+  /* Цвет рамки при фокусе */
+  outline: none;
+  /* Убираем стандартный контур */
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #cb7885;
+  /* Цвет кнопки */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #893941;
+  /* Цвет кнопки при наведении */
+  transform: scale(1.05);
+  /* Увеличение кнопки при наведении */
+}
+
+p {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px;
+  border: 2px solid #893941;
+  /* Цвет рамки для вывода */
+  border-radius: 5px;
+  background-color: white;
+  /* Цвет фона для вывода */
+  color: #5e6623;
+  /* Цвет текста для вывода */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+p:hover {
+  background-color: #cb7885;
+  /* Цвет фона при наведении */
+  color: white;
+  /* Цвет текста при наведении */
+}
