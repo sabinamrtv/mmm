@@ -1,0 +1,39 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    /* Светлый фон */
+    color: #333;
+    /* Темный текст */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    /* Темно-синий цвет заголовка */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    /* Ярко-синий цвет кнопки */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #2980b9;
+    /* Темно-синий цвет кнопки при наведении */
+}

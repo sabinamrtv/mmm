@@ -1,0 +1,6 @@
+src/*.js
+dist/*.js
+dist/*.html
+dist/*.css
+node_modules
+package-lock.json
