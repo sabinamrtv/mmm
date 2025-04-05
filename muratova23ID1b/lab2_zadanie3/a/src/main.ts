@@ -1,6 +1,6 @@
-function findMaxCount(): number {
+function findMaxCount(): string {
     const inputElement = document.getElementById("inputNumbers") as HTMLInputElement;
-    const inputString = inputElement: number;
+    const inputString = inputElement.value;
     const numbers: number[] = inputString.split(" ")
         .map(num => parseFloat(num.trim()))
         .filter(num => !isNaN(num));
