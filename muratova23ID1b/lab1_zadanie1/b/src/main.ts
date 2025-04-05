@@ -1,5 +1,5 @@
 ////Задание 1. b) Прочитать из input и вывести в текст тега p, используя document.getElementById
-function types_Fcn() {
+function types() {
   const inputElement = document.getElementById("userInput") as HTMLInputElement;
   const buttonElement = document.getElementById("submitButton") as HTMLButtonElement;
   const outputElement = document.getElementById("outputText") as HTMLParagraphElement;
@@ -7,10 +7,9 @@ function types_Fcn() {
   //Добавляем кнопку и присваем действие, на которое она будет реагировать(клик)
   buttonElement.addEventListener("click", () => {
     //Берем имя пользователя из input
-    const userName = inputElement.value;
+    const userName = inputElement;
 
     //Выводим приветствие в теге p
     outputElement.innerText = `Привет, ${userName}!`;
   });
 }
-types_Fcn();

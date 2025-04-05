@@ -1,16 +1,22 @@
 function canPlay() {
-    const dayOfWeek = (document.getElementById("dayOfWeek") as HTMLSelectElement).value;
-    const temperature = (document.getElementById("temperature") as HTMLSelectElement).value;
-    const weather = (document.getElementById("weather") as HTMLSelectElement).value;
-    const wind = (document.getElementById("wind") as HTMLSelectElement).value;
-    const humidity = (document.getElementById("humidity") as HTMLSelectElement).value;
+    // Получаем элементы формы
+    const dayOfWeek = document.getElementById("dayOfWeek") as HTMLSelectElement;
+    const temperature = document.getElementById("temperature") as HTMLSelectElement;
+    const weather = document.getElementById("weather") as HTMLSelectElement;
+    const wind = document.getElementById("wind") as HTMLSelectElement;
+    const humidity = document.getElementById("humidity") as HTMLSelectElement;
     const result = document.getElementById("result") as HTMLParagraphElement;
+    
+    const dayOfWeekValue = dayOfWeek.options[dayOfWeek.selectedIndex].text;
+    const temperatureValue = temperature.options[temperature.selectedIndex].text;
+    const weatherValue = weather.options[weather.selectedIndex].text;
+    const windValue = wind.options[wind.selectedIndex].text;
+    const humidityValue = humidity.options[humidity.selectedIndex].text;
 
-    // Проверка, можно ли играть в бадминтон в зависимости от факторов
-    if (dayOfWeek !== "sunday" && weather === "clear" && wind === "no" && (temperature === "warm" || temperature === "hot") && humidity === "low") {
-        result.textContent = "Да, можно играть в бадминтон! Жаль, что сегодня не воскресенье!(";
-    } else if (dayOfWeek == "sunday" && weather === "clear" && wind === "no" && (temperature === "warm" || temperature === "hot") && humidity === "low") {
-        result.textContent = "Да, можно играть в бадминтон! Воскресенье отлично для этого подходит!)";
+    if (dayOfWeekValue !== "Воскресенье" && weatherValue === "Ясно" && windValue === "Ветра нет" && (temperatureValue === "Тепло" || temperatureValue === "Жарко") && humidityValue === "Низкая влажность") {
+        result.textContent = "Да, можно играть в бадминтон! Жаль, что сегодня не воскресенье!";
+    } else if (dayOfWeekValue === "Воскресенье" && weatherValue === "Ясно" && windValue === "Ветра нет" && (temperatureValue === "Тепло" || temperatureValue === "Жарко") && humidityValue === "Низкая влажность") {
+        result.textContent = "Да, можно играть в бадминтон! Воскресенье отлично для этого подходит!";
     } else {
         result.textContent = "Нет, не стоит играть в бадминтон.";
     }
