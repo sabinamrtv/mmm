@@ -7,9 +7,10 @@ function types() {
   //Добавляем кнопку и присваем действие, на которое она будет реагировать(клик)
   buttonElement.addEventListener("click", () => {
     //Берем имя пользователя из input
-    const userName = inputElement;
+    const userName = inputElement.value;
 
     //Выводим приветствие в теге p
     outputElement.innerText = `Привет, ${userName}!`;
   });
 }
+types();

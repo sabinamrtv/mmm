@@ -31,7 +31,7 @@ function getPrimes(primes: boolean[], n: number): number[] {
 }
 
 // Функция для отображения результатов на странице
-function displayPrimes(n: number): void {
+function displayPrimes(n: number) {
     const primes = sieveOfEratosthenes(n); // Находим простые числа
     const primesList = getPrimes(primes, n); // Собираем список простых чисел
     const output = document.getElementById('output') as HTMLParagraphElement;

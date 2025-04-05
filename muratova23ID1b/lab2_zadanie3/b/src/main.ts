@@ -1,5 +1,5 @@
-function findMedian() {
-    const input = (document.getElementById("numbers") as HTMLInputElement).value;
+function findMedian(): number {
+    const input = (document.getElementById("numbers") as HTMLInputElement);
     const numbers = input.split(",").map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
     if (numbers.length === 0) {
         document.getElementById("result")!.textContent = "Пожалуйста, введите хотя бы одно число.";
