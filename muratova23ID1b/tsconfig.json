@@ -4,5 +4,5 @@
   },
   "include": [ 
     "**/src/**/*"
-  ]
+, "lab2_zadanie1/c/dist/main.js"  ]
 }
