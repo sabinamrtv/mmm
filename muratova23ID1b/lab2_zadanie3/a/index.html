@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Поиск простых чисел</title>
+    <title>Задача на массивы</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <label for="inputN">Введите число N:</label>
-    <input type="number" id="inputN" min="2">
-    <button onclick="findPrimes()">Найти простые числа</button>
+    <h1>Введите набор чисел (через пробел):</h1>
+    <input type="text" id="inputNumbers" placeholder="Введите числа">
+    <button onclick="findMaxCount()">Найти максимальное число и его количество</button>
     <p id="result"></p>
 
-    <script src="main.js"></script>
+    <script src="dist/main.js"></script>
 </body>
 </html>
