@@ -1,4 +1,5 @@
 function canPlay() {
+    console.log("Функция вызвана!");
     const dayOfWeek = (document.getElementById("dayOfWeek") as HTMLSelectElement).value;
     const temperature = (document.getElementById("temperature") as HTMLSelectElement).value;
     const weather = (document.getElementById("weather") as HTMLSelectElement).value;
