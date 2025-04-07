@@ -1,0 +1,113 @@
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f8faf9;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8faf9(255, 255, 255, 0.7);
+    /* Слегка прозрачный зелёный фон */
+    backdrop-filter: blur(5px);
+    /* Размытие фона */
+}
+
+h1 {
+    background-color: #6a68f9;
+    color: white;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 12px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+    width: 98%;
+    border-radius: 10px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(146, 202, 132, 0.9);
+    /* Слегка прозрачный фон для контейнера */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+input,
+button {
+    padding: 10px;
+    margin: 10px 0;
+    width: 98,5%;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+select,
+button {
+    padding: 12px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+select:focus,
+button:focus {
+    outline: none;
+    cursor: pointer;
+    border-color: #4caf50;
+    /* Зелёная рамка при фокусе */
+}
+
+select {
+    background-color: #fff;
+}
+
+button {
+    background-color: #6a68f9;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2d158d;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #25159f;
+    transform: scale(1);
+}
+
+p {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 12px;
+    transition: opacity 0.3s ease;
+    width: 98%;
+    border-radius: 10px;
+}
+
+p.hidden {
+    opacity: 0;
+}
+
+select,
+p {
+    margin-top: 10px;
+}
