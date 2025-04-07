@@ -1,44 +1,44 @@
 class Person {
-    private name: string;
-    private age: number;
-  
-    constructor();
-    constructor(name: string, age: number);
-    constructor(name?: string, age?: number) {
-      this.name = name || "Без имени";
-      this.age = age || 0;
-    }
-  
-    get getName(): string {
-      return this.name;
-    }
-  
-    set setName(newName: string) {
-      this.name = newName;
-    }
-  
-    get getAge(): number {
-      return this.age;
-    }
-  
-    set setAge(newAge: number) {
-      this.age = newAge;
-    }
-  
-    toString(): string {
-      return `Имя: ${this.name}, Возраст: ${this.age}`;
+  private _name: string;
+  private _age: number;
+
+  constructor(name: string = "Unknown", age: number = 0) {
+    this._name = name;
+    this._age = age;
+  }
+
+  get name(): string {
+    return this._name;
+  }
+
+  set name(name: string) {
+    this._name = name;
+  }
+
+  get age(): number {
+    return this._age;
+  }
+
+  set age(age: number) {
+    if (age < 0) {
+      console.log("Возраст не может быть отрицательным.");
+    } else {
+      this._age = age;
     }
   }
-  
-  const person1 = new Person();
-  const person2 = new Person("Илюша", 21);
-  const person3 = new Person("Антошка", 21);
-  const person4 = new Person("Сабинка", 20);
-  
-  const personsOutput = document.getElementById("output-persons")!;
-  personsOutput.innerText =
-    "Список персонажей:\n" +
-    person1.toString() + "\n" +
-    person2.toString() + "\n" +
-    person3.toString()
-    person4.toString();
+
+  displayInfo(): void {
+    console.log(`Имя: ${this._name}, Возраст: ${this._age}`);
+  }
+}
+
+const person1 = new Person("Илья", 30);
+const person2 = new Person("Антон", 25);
+const person3 = new Person();
+
+person1.age = 20;
+person2.name = "Сабина";
+
+person1.displayInfo();
+person2.displayInfo();
+person3.displayInfo(); 
