@@ -3,6 +3,6 @@
     "outDir": "dist",
   },
   "include": [ 
-    "**/src/**/*"
-, "lab2_zadanie1/c/dist/main.js", "lab2_zadanie3/a/dist/main.js", "lab1_zadanie1/b/dist/main.js", "lab2_zadanie2/b/dist/main.js", "lab2_zadanie3/b/dist/main.js"  ]
+    "src/**/*"
+  ]
 }
