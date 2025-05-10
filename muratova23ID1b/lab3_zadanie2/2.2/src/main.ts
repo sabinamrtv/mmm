@@ -7,16 +7,16 @@ class BankAccount {
       this.#balance = initialBalance;
     }
   
-    deposit(amount: number): void {
+    deposit(amount: number){
       if (amount <= 0) {
         display("Сумма должна быть положительной.");
         return;
       }
       this.#balance += amount;
-      display(`Счет пополнен на ${amount}. Новый баланс: ${this.#balance}`);
+      display(`Счет пополнен на ${amount}. Новый баланс: ${this.#balance}₽`);
     }
   
-    withdraw(amount: number): void {
+    withdraw(amount: number){
       if (amount <= 0) {
         display("Сумма должна быть положительной.");
         return;
@@ -26,7 +26,7 @@ class BankAccount {
         return;
       }
       this.#balance -= amount;
-      display(`Со счета снято ${amount}. Новый баланс: ${this.#balance}`);
+      display(`Со счета снято ${amount}₽. Новый баланс: ${this.#balance}₽`);
     }
   
     getBalance(): number {
@@ -36,7 +36,7 @@ class BankAccount {
   
   let currentAccount: BankAccount | null = null;
   
-  function createAccount(): void {
+  function createAccount(){
     const accNumber = (document.getElementById("accountNumber") as HTMLInputElement).value;
     const initial = parseFloat((document.getElementById("initialBalance") as HTMLInputElement).value);
   
@@ -50,30 +50,30 @@ class BankAccount {
     (document.getElementById("actions") as HTMLDivElement).style.display = "block";
   }
   
-  function deposit(): void {
+  function deposit(){
     if (!currentAccount) return;
     const amount = parseFloat((document.getElementById("amount") as HTMLInputElement).value);
     currentAccount.deposit(amount);
   }
   
-  function withdraw(): void {
+  function withdraw(){
     if (!currentAccount) return;
     const amount = parseFloat((document.getElementById("amount") as HTMLInputElement).value);
     currentAccount.withdraw(amount);
   }
   
-  function showBalance(): void {
+  function showBalance(){
     if (!currentAccount) return;
     const balance = currentAccount.getBalance();
     display(`Текущий баланс: ${balance.toFixed(2)}₽`);
   }
   
-  function display(message: string): void {
+  function display(message: string){
     const result = document.getElementById("result") as HTMLDivElement;
     result.innerText = message;
   }
   
-  // ✅ Сделаем функции доступными глобально
+ 
   (window as any).createAccount = createAccount;
   (window as any).deposit = deposit;
   (window as any).withdraw = withdraw;

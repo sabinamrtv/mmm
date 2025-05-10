@@ -21,7 +21,7 @@ class Book {
         this.author = author;
     }
 
-    setAuthor(author: Author): void {
+    setAuthor(title: string, author: Author) {
         this.author = author;
     }
 
@@ -34,7 +34,7 @@ class Book {
     }
 }
 
-function createBook(): void {
+function createBook(){
     const nameInput = document.getElementById("authorName") as HTMLInputElement;
     const yearInput = document.getElementById("birthYear") as HTMLInputElement;
     const titleInput = document.getElementById("bookTitle") as HTMLInputElement;

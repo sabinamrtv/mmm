@@ -19,7 +19,6 @@ class Student {
         this.averageScore = averageScore;
     }
 
-    // Геттеры
     getName() {
         return this.name;
     }
@@ -40,7 +39,6 @@ class Student {
         return this.averageScore;
     }
 
-    // Сеттеры
     setName(name: string) {
         this.name = name;
     }
@@ -61,7 +59,6 @@ class Student {
         this.averageScore = score;
     }
 
-    // Возраст в годах
     getAge() {
         const today = new Date();
         let age = today.getFullYear() - this.birthDate.getFullYear();
@@ -72,12 +69,10 @@ class Student {
         return age;
     }
 
-    // Отличник?
     isExcellentStudent() {
         return this.averageScore >= 4.8;
     }
 
-    // Форматированный вывод
     toString() {
         return `
         <div class="student">
@@ -92,7 +87,6 @@ class Student {
     }
 }
 
-// Создание и вывод студентов
 const students = [
     new Student("Ирина Петрова", new Date(2003, 4, 10), "22ИЭ", 1001, 4.9),
     new Student("Андрей Смирнов", new Date(2002, 10, 5), "20ИД", 1002, 4.3),
