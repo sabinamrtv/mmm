@@ -13,7 +13,7 @@ class BankAccount {
         return;
       }
       this.#balance += amount;
-      display(`Счет пополнен на ${amount}. Новый баланс: ${this.#balance}₽`);
+      display(`Счет пополнен на ${amount}₽. Новый баланс: ${this.#balance}₽`);
     }
   
     withdraw(amount: number){
