@@ -9,7 +9,22 @@
 </head>
 
 <body>
+    <div class="container">
+        <h1>Информация о книге</h1>
 
+        <label for="authorName">Имя автора:</label>
+        <input type="text" id="authorName" placeholder="Например: Лев Толстой" />
+
+        <label for="birthYear">Год рождения автора:</label>
+        <input type="number" id="birthYear" placeholder="Например: 1828" />
+
+        <label for="bookTitle">Название книги:</label>
+        <input type="text" id="bookTitle" placeholder="Например: Война и мир" />
+
+        <button onclick="createBook()">Создать книгу</button>
+
+        <div id="result"></div>
+    </div>
 
 
     <script src="dist/main.js"></script>
