@@ -94,9 +94,9 @@ class Student {
 
 // Создание и вывод студентов
 const students = [
-    new Student("Ирина Петрова", new Date(2003, 4, 10), "ИС-22", 1001, 4.9),
-    new Student("Андрей Смирнов", new Date(2002, 10, 5), "ПО-21", 1002, 4.3),
-    new Student("Дмитрий Орлов", new Date(2004, 1, 28), "КБ-23", 1003, 4.95)
+    new Student("Ирина Петрова", new Date(2003, 4, 10), "22ИЭ", 1001, 4.9),
+    new Student("Андрей Смирнов", new Date(2002, 10, 5), "20ИД", 1002, 4.3),
+    new Student("Дмитрий Орлов", new Date(2004, 1, 28), "23ИС", 1003, 4.95)
 ];
 
 const output = document.getElementById("output");
