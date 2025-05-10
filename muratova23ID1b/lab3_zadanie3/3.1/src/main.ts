@@ -1,4 +1,3 @@
-
 class Author {
     name: string;
     birthYear: number;
@@ -12,7 +11,6 @@ class Author {
         return `${this.name} (род. ${this.birthYear})`;
     }
 }
-
 
 class Book {
     private title: string;
@@ -36,13 +34,24 @@ class Book {
     }
 }
 
+function createBook(): void {
+    const nameInput = document.getElementById("authorName") as HTMLInputElement;
+    const yearInput = document.getElementById("birthYear") as HTMLInputElement;
+    const titleInput = document.getElementById("bookTitle") as HTMLInputElement;
+    const result = document.getElementById("result") as HTMLDivElement;
 
-const author1 = new Author("Александр Пушкин", 1799);
-const book1 = new Book("Капитанская дочка", author1);
+    const name = nameInput.value.trim();
+    const year = parseInt(yearInput.value);
+    const title = titleInput.value.trim();
 
-console.log(book1.getBookInfo());
+    if (!name || isNaN(year) || !title) {
+        result.textContent = "Пожалуйста, заполните все поля корректно.";
+        return;
+    }
 
+    const author = new Author(name, year);
+    const book = new Book(title, author);
+    result.textContent = book.getBookInfo();
+}
 
-const author2 = new Author("Фёдор Достоевский", 1821);
-book1.setAuthor(author2);
-console.log(book1.getBookInfo()); // Книга: "Война и мир", Автор: Фёдор Достоевский (род. 1821)
+(window as any).createBook = createBook;
