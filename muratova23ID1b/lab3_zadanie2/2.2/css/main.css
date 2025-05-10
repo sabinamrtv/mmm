@@ -2,8 +2,12 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     padding: 20px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/048/587/373/non_2x/modern-bank-building-entrance-free-photo.jpeg');
+    background-size: 120% auto;
+    background-position: center;
   }
-  
+    
+    
   .container {
     max-width: 400px;
     margin: auto;
