@@ -4,5 +4,5 @@
   },
   "include": [ 
     "**/src/**/*"
-, "lab3_zadanie1/1.1/dist/main.js", "lab3_zadanie1/1.2/dist/main.js", "lab3_zadanie2/2.1/dist/main.js"  ]
+, "lab3_zadanie1/1.1/dist/main.js", "lab3_zadanie1/1.2/dist/main.js", "lab3_zadanie2/2.1/dist/main.js", "lab3_zadanie2/2.2/src/main.ts", "lab3_zadanie2/2.2/dist/main.js"  ]
 }
