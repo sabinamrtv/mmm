@@ -1,6 +1,6 @@
 class BankAccount {
     public accountNumber: string;
-    #balance: number; 
+    #balance: number;
   
     constructor(accountNumber: string, initialBalance: number = 0) {
       this.accountNumber = accountNumber;
@@ -9,24 +9,24 @@ class BankAccount {
   
     deposit(amount: number): void {
       if (amount <= 0) {
-        console.log("Сумма пополнения должна быть положительной.");
+        display("Сумма должна быть положительной.");
         return;
       }
       this.#balance += amount;
-      console.log(`Счет пополнен на ${amount}. Новый баланс: ${this.#balance}`);
+      display(`Счет пополнен на ${amount}. Новый баланс: ${this.#balance}`);
     }
   
     withdraw(amount: number): void {
       if (amount <= 0) {
-        console.log("Сумма снятия должна быть положительной.");
+        display("Сумма должна быть положительной.");
         return;
       }
       if (amount > this.#balance) {
-        console.log("Недостаточно средств для снятия.");
+        display("Недостаточно средств.");
         return;
       }
       this.#balance -= amount;
-      console.log(`Со счета снято ${amount}. Новый баланс: ${this.#balance}`);
+      display(`Со счета снято ${amount}. Новый баланс: ${this.#balance}`);
     }
   
     getBalance(): number {
@@ -34,8 +34,48 @@ class BankAccount {
     }
   }
   
-  const myAccount = new BankAccount("123456789", 1000);
-  myAccount.deposit(500);     
-  myAccount.withdraw(300);       
-  console.log(myAccount.getBalance()); 
+  let currentAccount: BankAccount | null = null;
+  
+  function createAccount(): void {
+    const accNumber = (document.getElementById("accountNumber") as HTMLInputElement).value;
+    const initial = parseFloat((document.getElementById("initialBalance") as HTMLInputElement).value);
+  
+    if (!accNumber || isNaN(initial)) {
+      display("Введите корректные данные.");
+      return;
+    }
+  
+    currentAccount = new BankAccount(accNumber, initial);
+    display("Счёт успешно создан.");
+    (document.getElementById("actions") as HTMLDivElement).style.display = "block";
+  }
+  
+  function deposit(): void {
+    if (!currentAccount) return;
+    const amount = parseFloat((document.getElementById("amount") as HTMLInputElement).value);
+    currentAccount.deposit(amount);
+  }
+  
+  function withdraw(): void {
+    if (!currentAccount) return;
+    const amount = parseFloat((document.getElementById("amount") as HTMLInputElement).value);
+    currentAccount.withdraw(amount);
+  }
+  
+  function showBalance(): void {
+    if (!currentAccount) return;
+    const balance = currentAccount.getBalance();
+    display(`Текущий баланс: ${balance.toFixed(2)}₽`);
+  }
+  
+  function display(message: string): void {
+    const result = document.getElementById("result") as HTMLDivElement;
+    result.innerText = message;
+  }
+  
+  // ✅ Сделаем функции доступными глобально
+  (window as any).createAccount = createAccount;
+  (window as any).deposit = deposit;
+  (window as any).withdraw = withdraw;
+  (window as any).showBalance = showBalance;
   
