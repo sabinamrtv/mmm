@@ -1,59 +1,106 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  color: #333;
 }
 
 .container {
-    max-width: 400px;
-    width: 100%;
-    background-color: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  margin-top: 50px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  color: #5d2f8e;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: bold;
 }
 
 label {
-    margin-top: 10px;
-    display: block;
+  display: block;
+  margin-bottom: 5px;
+  color: #5d2f8e;
+  font-size: 16px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
 }
+
+input[type="text"] {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+input[type="text"]:focus {
+  border-color: #5d2f8e;
+  outline: none;
+  background-color: #f9f9f9; 
+}
+
 
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
+  background-color: #5d2f8e;
+  color: white;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
 }
 
 button:hover {
-    background-color: #0d47a1;
+  background-color: #3e1b64;
 }
 
-#result {
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: center;
+#output {
+  padding: 15px;
+  border-radius: 8px;
+  color: #333;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap;
+}
+
+.book-info {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.book-info h2 {
+  color: #5d2f8e;
+  margin: 0;
+  font-size: 20px;
+}
+
+.book-info p {
+  color: #777;
+  font-size: 14px;
+}
+
+.book-info .author {
+  color: #5d2f8e;
+  font-weight: bold;
+}
+
+.input-container {
+  margin-bottom: 20px;
 }

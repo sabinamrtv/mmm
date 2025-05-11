@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Автомобиль</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Автомобиль и пассажиры</h1>
+
+    <label>Модель автомобиля:</label>
+    <input id="carModel" type="text" placeholder="Например: Toyota" />
+
+    <label>Мощность двигателя:</label>
+    <input id="enginePower" type="number" placeholder="Например: 150" />
+
+    <button onclick="createCar()">Создать машину</button>
+
+    <hr />
+
+    <label>Имя пассажира:</label>
+    <input id="passengerName" type="text" placeholder="Имя пассажира" />
+
+    <button onclick="addPassenger()">Добавить пассажира</button>
+    <button onclick="removePassenger()">Удалить пассажира</button>
+
+    <div id="status"></div>
+    <div id="output"></div>
+  </div>
+
+  <script src="dist/main.js"></script>
+</body>
+</html>
