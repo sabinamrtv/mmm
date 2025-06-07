@@ -4,5 +4,5 @@
   },
   "include": [ 
     "**/src/**/*"
-, "lab3_zadanie1/1.1/dist/main.js", "lab3_zadanie1/1.2/dist/main.js", "lab3_zadanie2/2.1/dist/main.js", "lab3_zadanie2/2.2/src/main.ts", "lab3_zadanie2/2.2/dist/main.js", "lab3_zadanie3/3.1/dist/main.js", "lab3_zadanie3/3.2/dist/main.js", "lab4_zadanie1/4.1/dist/main.js", "lab4_zadanie1/4.2/dist/main.js", "lab4_zadanie1/4.3/dist/main.js", "lab5_zadanie1/5.1/dist/main.js"  ]
+, "lab3_zadanie1/1.1/dist/main.js", "lab3_zadanie1/1.2/dist/main.js", "lab3_zadanie2/2.1/dist/main.js", "lab3_zadanie2/2.2/src/main.ts", "lab3_zadanie2/2.2/dist/main.js", "lab3_zadanie3/3.1/dist/main.js", "lab3_zadanie3/3.2/dist/main.js", "lab4_zadanie1/4.1/dist/main.js", "lab4_zadanie1/4.2/dist/main.js", "lab4_zadanie1/4.3/dist/main.js", "lab5_zadanie1/5.1/dist/main.js", "lab5_zadanie1/5.2/dist/main.js"  ]
 }
