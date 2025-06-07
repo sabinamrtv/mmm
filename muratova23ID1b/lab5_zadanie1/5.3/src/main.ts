@@ -4,8 +4,8 @@ class Ray {
     public startY: number,
     public length: number,
     public angle: number, 
-    public color: string = 'deepskyblue',
-    public width: number = 1  
+    public color: string = 'blue',
+    public width: number = 0.3  
   ) {}
 
   draw(ctx: CanvasRenderingContext2D) {
