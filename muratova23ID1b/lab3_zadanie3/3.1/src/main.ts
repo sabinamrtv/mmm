@@ -34,7 +34,7 @@ class Book {
     }
 }
 
-function createBook(){
+function createBook() {
     const nameInput = document.getElementById("authorName") as HTMLInputElement;
     const yearInput = document.getElementById("birthYear") as HTMLInputElement;
     const titleInput = document.getElementById("bookTitle") as HTMLInputElement;

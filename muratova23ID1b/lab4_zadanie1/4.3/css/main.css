@@ -30,7 +30,9 @@ label {
     display: block;
 }
 
-textarea, select, button {
+textarea,
+select,
+button {
     width: 100%;
     font-size: 16px;
     border-radius: 10px;
@@ -46,7 +48,8 @@ textarea {
     font-family: monospace;
 }
 
-textarea:focus, select:focus {
+textarea:focus,
+select:focus {
     border-color: #b92993;
     outline: none;
 }

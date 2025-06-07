@@ -1,52 +1,51 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    padding: 20px;
-    background-image: url('https://static.vecteezy.com/system/resources/previews/048/587/373/non_2x/modern-bank-building-entrance-free-photo.jpeg');
-    background-size: 120% auto;
-    background-position: center;
-  }
-    
-    
-  .container {
-    max-width: 400px;
-    margin: auto;
-    background-color: white;
-    padding: 50px;
-    border-radius: 30px;
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
-  }
-  
-  label {
-    display: block;
-    margin-top: 15px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  button {
-    margin-top: 15px;
-    margin-right: 10px;
-    padding: 10px 15px;
-    border: none;
-    background-color: #1976d2;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0d47a1;
-  }
-  
-  #result {
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/048/587/373/non_2x/modern-bank-building-entrance-free-photo.jpeg');
+  background-size: 120% auto;
+  background-position: center;
+}
+
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  background-color: white;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  margin-top: 15px;
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #1976d2;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0d47a1;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+}

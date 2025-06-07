@@ -42,13 +42,13 @@ processBtn.addEventListener('click', () => {
     sensors[id].push(temp);
   }
 
-  const results: {id: string, avg: number}[] = [];
+  const results: { id: string, avg: number }[] = [];
 
   for (const id in sensors) {
     const temps = sensors[id];
     const sum = temps.reduce((a, b) => a + b, 0);
     const avg = sum / temps.length;
-    results.push({id, avg});
+    results.push({ id, avg });
   }
 
   if (results.length === 0) {

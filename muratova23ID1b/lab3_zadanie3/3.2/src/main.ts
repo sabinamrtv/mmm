@@ -68,7 +68,7 @@ class Car {
 
 let car: Car;
 
-function createCar(){
+function createCar() {
     const model = (document.getElementById("carModel") as HTMLInputElement).value;
     const power = parseInt((document.getElementById("enginePower") as HTMLInputElement).value);
     car = new Car(model, new Engine(power));
@@ -76,7 +76,7 @@ function createCar(){
     updateCarInfo();
 }
 
-function addPassenger(){
+function addPassenger() {
     const name = (document.getElementById("passengerName") as HTMLInputElement).value.trim();
     if (!name || !car) return;
     const passenger = new Passenger(name);
@@ -85,7 +85,7 @@ function addPassenger(){
     updateCarInfo();
 }
 
-function removePassenger(){
+function removePassenger() {
     const name = (document.getElementById("passengerName") as HTMLInputElement).value.trim();
     if (!name || !car) return;
     const passenger = new Passenger(name);
@@ -94,12 +94,12 @@ function removePassenger(){
     updateCarInfo();
 }
 
-function updateCarInfo(){
+function updateCarInfo() {
     const output = document.getElementById("output") as HTMLDivElement;
     output.innerHTML = car ? car.displayInfo() : "";
 }
 
-function showResult(message: string){
+function showResult(message: string) {
     const status = document.getElementById("status") as HTMLDivElement;
     status.textContent = message;
 }

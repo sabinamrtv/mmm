@@ -6,7 +6,7 @@ class Line {
     public y2: number,
     public color: string,
     public width: number = 2
-  ) {}
+  ) { }
 
   draw(ctx: CanvasRenderingContext2D) {
     ctx.strokeStyle = this.color;
@@ -21,7 +21,7 @@ class Line {
 class TangledLines {
   lines: Line[] = [];
 
-  constructor(public width: number, public height: number) {}
+  constructor(public width: number, public height: number) { }
 
   private randomColor(): string {
     const r = Math.floor(Math.random() * 200 + 30);

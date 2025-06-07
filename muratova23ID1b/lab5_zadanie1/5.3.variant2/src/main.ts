@@ -6,7 +6,7 @@ class Ray {
     public angle: number,
     public color: string = 'blue',
     public width: number = 0.3
-  ) {}
+  ) { }
 
   draw(ctx: CanvasRenderingContext2D) {
     const endX = this.startX + this.length * Math.cos(this.angle);
@@ -25,7 +25,7 @@ class Ray {
 class RaysCollection {
   rays: Ray[] = [];
 
-  constructor(public canvasWidth: number, public canvasHeight: number) {}
+  constructor(public canvasWidth: number, public canvasHeight: number) { }
 
   generateRays(count: number) {
     this.rays = [];

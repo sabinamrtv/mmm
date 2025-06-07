@@ -7,7 +7,7 @@ class Rectangle {
     public fillColor: string,
     public borderColor: string = 'black',
     public borderWidth: number = 1
-  ) {}
+  ) { }
 
   draw(ctx: CanvasRenderingContext2D) {
     ctx.fillStyle = this.fillColor;
@@ -22,7 +22,7 @@ class Rectangle {
 class RectanglesCollection {
   rectangles: Rectangle[] = [];
 
-  constructor(public canvasWidth: number, public canvasHeight: number) {}
+  constructor(public canvasWidth: number, public canvasHeight: number) { }
 
   private randomColor(): string {
     const r = Math.floor(Math.random() * 200 + 30);
