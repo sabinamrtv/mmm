@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/024/584/238/non_2x/pink-english-rose-watercolor-flower-free-png.png');
+    background-size: 50% auto;
+    background-position: left;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(211, 39, 122, 0.534);
+    width: 80%;
+    max-width: 600px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 20px;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #b642b2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cc4393;
+}
+
+pre {
+    font-size: 16px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
