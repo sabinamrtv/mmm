@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Подсчёт вхождений строки</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Подсчёт вхождений строки</h1>
+
+    <label for="substring">Что ищем:</label>
+    <input type="text" id="substring" placeholder="Введите подстроку" />
+
+    <label for="text">Где ищем:</label>
+    <textarea id="text" rows="4" placeholder="Введите текст"></textarea>
+
+    <button onclick="countOccurrences()">Рассчитать</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="dist/main.js"></script>
+</body>
+
+</html>
