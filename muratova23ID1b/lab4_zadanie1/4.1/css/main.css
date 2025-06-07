@@ -11,13 +11,13 @@ body {
     background-color: #ffffff;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(146, 13, 106, 0.2);
     width: 400px;
 }
 
 h1 {
     text-align: center;
-    color: #4a148c;
+    color: #8c1476;
     margin-bottom: 20px;
 }
 
@@ -25,7 +25,7 @@ label {
     display: block;
     margin-top: 15px;
     font-weight: bold;
-    color: #333;
+    color: #050505d5;
 }
 
 input,
@@ -34,13 +34,13 @@ textarea {
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     border-radius: 8px;
 }
 
 input:focus,
 textarea:focus {
-    border-color: #7e57c2;
+    border-color: #c25799;
     outline: none;
 }
 
@@ -48,7 +48,7 @@ button {
     width: 100%;
     padding: 12px;
     margin-top: 20px;
-    background-color: #7e57c2;
+    background-color: #c257a4;
     color: white;
     border: none;
     border-radius: 8px;
@@ -58,13 +58,13 @@ button {
 }
 
 button:hover {
-    background-color: #5e35b1;
+    background-color: #b13581;
 }
 
 #result {
     margin-top: 20px;
     font-size: 18px;
     text-align: center;
-    color: #2e7d32;
+    color: #0a0a0a;
     font-weight: bold;
 }

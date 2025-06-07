@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   max-width: 600px;
   margin: 30px auto;
-  background: #f0f4f8;
+  background: #f8f0f7;
   padding: 20px;
   border-radius: 8px;
 }
@@ -17,7 +17,7 @@ textarea {
   font-family: monospace;
   font-size: 16px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #e8e7e8;
   border-radius: 4px;
   resize: vertical;
 }
@@ -26,21 +26,21 @@ select, button {
   padding: 8px 14px;
   font-size: 16px;
   border-radius: 4px;
-  border: 1px solid #007acc;
-  background-color: #007acc;
-  color: white;
+  border: 1px solid #cc0085;
+  background-color: #cc007e;
+  color: rgb(255, 255, 255);
   cursor: pointer;
 }
 button:hover {
-  background-color: #005f99;
+  background-color: #990075;
 }
 .output {
   margin-top: 20px;
-  background: white;
+  background: rgb(255, 255, 255);
   padding: 12px 15px;
   border-radius: 6px;
   font-family: monospace;
   font-size: 18px;
   white-space: pre-wrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(146, 4, 113, 0.584);
 }
