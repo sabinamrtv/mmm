@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Средняя температура датчиков</title>
-  <link rel="stylesheet" href="css/main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Средняя температура датчиков</title>
+    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
+    <div class="container">
+        <h2>Средняя температура датчиков</h2>
 
-  <h2>Средняя температура датчиков</h2>
+        <label for="inputData">Введите пакет показаний с датчиков:</label>
+        <textarea id="inputData" maxlength="512" placeholder="Пример: 3744@6646@63-4@461@127"></textarea>
 
-  <label for="inputData">Введите пакет показаний с датчиков:</label>
-  <textarea id="inputData" maxlength="512" placeholder="Пример: 3744@6646@63-4@461@127"></textarea>
+        <label for="sortField">Сортировать по:</label>
+        <select id="sortField">
+            <option value="id">ID датчика (возрастание)</option>
+            <option value="temp">Средняя температура (возрастание)</option>
+        </select>
 
-  <label for="sortField">Сортировать по:</label>
-  <select id="sortField">
-    <option value="id">ID датчика (возрастание)</option>
-    <option value="temp">Средняя температура (возрастание)</option>
-  </select>
+        <button id="processBtn">Обработать</button>
 
-  <button id="processBtn">Обработать</button>
+        <pre id="output"></pre>
+    </div>
 
-  <div class="output" id="output"></div>
-
-  <script src="dist/main.js"></script>
+    <script src="dist/main.js" defer></script>
 </body>
 </html>
