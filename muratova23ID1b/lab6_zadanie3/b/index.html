@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Языки школьников</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Языки, которые знают школьники</h1>
+
+        <div>
+            <label for="inputData">Введите данные:</label>
+            <textarea id="inputData" rows="10" cols="50"
+                placeholder="Пример ввода: 3\n3\nRussian\nEnglish\nJapanese\n2\nRussian\nEnglish\n1\nEnglish"></textarea>
+        </div>
+
+        <button onclick="processLanguages()">Обработать данные</button>
+
+        <h2>Результаты</h2>
+        <pre id="output"></pre>
+    </div>
+
+    <script src="dist/main.js"></script>
+</body>
+
+</html>
