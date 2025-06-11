@@ -1,26 +1,38 @@
 // Функция для проверки валидности строки скобок
 function isValid(input: string): boolean {
-  const stack: string[] = [];
-  const matchingBrackets: { [key: string]: string } = {
-    ')': '(',
-    '}': '{',
-    ']': '['
-  };
+    const stack: string[] = [];
+    const matchingBrackets: { [key: string]: string } = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
 
-  for (let char of input) {
-    if (char === '(' || char === '{' || char === '[') {
-      stack.push(char);
-    } else if (char === ')' || char === '}' || char === ']') {
-      if (stack.length === 0 || stack.pop() !== matchingBrackets[char]) {
-        return false;
-      }
+    for (let char of input) {
+        if (char === '(' || char === '{' || char === '[') {
+            stack.push(char);
+        } else if (char === ')' || char === '}' || char === ']') {
+            if (stack.length === 0 || stack.pop() !== matchingBrackets[char]) {
+                return false;
+            }
+        }
     }
-  }
 
-  return stack.length === 0;
+    return stack.length === 0;
 }
 
-// Пример использования
-const inputString: string = "{[()]}";
-const result: boolean = isValid(inputString);
-console.log(`Строка "${inputString}" валидна? ${result}`);
+// Обработчик события для кнопки "Проверить"
+document.getElementById("checkButton")!.addEventListener("click", () => {
+    const inputString = (document.getElementById("inputString") as HTMLInputElement).value;
+    const resultDiv = document.getElementById("result")!;
+
+    const result = isValid(inputString);
+
+    // Отображаем результат
+    if (result) {
+        resultDiv.textContent = "Строка валидна!";
+        resultDiv.className = "result valid";
+    } else {
+        resultDiv.textContent = "Строка невалидна!";
+        resultDiv.className = "result invalid";
+    }
+});
