@@ -1,24 +1,27 @@
-// Функция для нахождения самого часто встречающегося символа и его повторений
-function mostFrequentChar(s: string): [string, number] {
+function mostFrequentCharacter(s: string): [string, number] {
     const frequencyMap: { [key: string]: number } = {};
 
-    // Подсчитываем частоту каждого символа
-    for (const char of s) {
-        frequencyMap[char] = (frequencyMap[char] || 0) + 1;
-    }
-
-    // Находим символ с максимальной частотой
-    let mostFrequentChar = '';
-    let maxCount = 0;
-
-    for (const char in frequencyMap) {
-        if (frequencyMap[char] > maxCount) {
-            mostFrequentChar = char;
-            maxCount = frequencyMap[char];
+    // Подсчет частоты каждого символа в строке
+    for (let char of s) {
+        if (frequencyMap[char]) {
+            frequencyMap[char]++;
+        } else {
+            frequencyMap[char] = 1;
         }
     }
 
-    return [mostFrequentChar, maxCount];
+    // Поиск самого часто встречающегося символа
+    let maxChar = '';
+    let maxCount = 0;
+
+    for (let char in frequencyMap) {
+        if (frequencyMap[char] > maxCount) {
+            maxCount = frequencyMap[char];
+            maxChar = char;
+        }
+    }
+
+    return [maxChar, maxCount];
 }
 
 // Обработчик события для кнопки "Проверить"
@@ -26,9 +29,8 @@ document.getElementById("checkButton")!.addEventListener("click", () => {
     const inputString = (document.getElementById("inputString") as HTMLInputElement).value;
     const resultDiv = document.getElementById("result")!;
 
-    const [char, count] = mostFrequentChar(inputString);
+    const [maxChar, maxCount] = mostFrequentCharacter(inputString);
 
     // Отображаем результат
-    resultDiv.textContent = `Самый часто встречающийся символ: '${char}', его количество: ${count}`;
-    resultDiv.className = "result valid";
+    resultDiv.textContent = `Самый часто встречающийся символ: "${maxChar}", Количество повторов: ${maxCount}`;
 });
