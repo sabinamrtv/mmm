@@ -1,72 +1,64 @@
-function mostFrequentCharacter(s: string): [string, number] {
-    const frequencyMap: { [key: string]: number } = {};
+import * as fs from 'fs';
+import * as path from 'path';
 
-    // Подсчет частоты каждого символа в строке
-    for (let char of s) {
-        if (frequencyMap[char]) {
-            frequencyMap[char]++;
-        } else {
-            frequencyMap[char] = 1;
-        }
+// Функция для поиска файлов по имени и содержимому
+function searchFiles(directory: string, searchTerm: string, searchInContent: boolean = false): void {
+    // Проверяем, существует ли директория
+    if (!fs.existsSync(directory)) {
+        console.log(`Ошибка: директория ${directory} не существует.`);
+        return;
     }
 
-    // Поиск самого часто встречающегося символа
-    let maxChar = '';
-    let maxCount = 0;
-
-    for (let char in frequencyMap) {
-        if (frequencyMap[char] > maxCount) {
-            maxCount = frequencyMap[char];
-            maxChar = char;
+    // Читаем содержимое директории
+    fs.readdir(directory, (err, files) => {
+        if (err) {
+            console.log('Ошибка при чтении директории:', err);
+            return;
         }
-    }
 
-    return [maxChar, maxCount];
+        // Перебираем файлы в директории
+        files.forEach((file) => {
+            const filePath = path.join(directory, file);
+
+            // Проверяем, является ли это директорией или файлом
+            fs.stat(filePath, (err, stats) => {
+                if (err) {
+                    console.log('Ошибка при получении информации о файле:', err);
+                    return;
+                }
+
+                if (stats.isDirectory()) {
+                    // Если это директория, рекурсивно ищем в ней
+                    searchFiles(filePath, searchTerm, searchInContent);
+                } else {
+                    // Если это файл, проверяем его имя
+                    if (file.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        console.log(`Найден файл по имени: ${filePath}`);
+                    }
+
+                    // Если нужно искать по содержимому, открываем файл
+                    if (searchInContent && stats.isFile()) {
+                        fs.readFile(filePath, 'utf-8', (err, data) => {
+                            if (err) {
+                                console.log('Ошибка при чтении файла:', err);
+                                return;
+                            }
+
+                            if (data.includes(searchTerm)) {
+                                console.log(`Найден файл по содержимому: ${filePath}`);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    });
 }
 
-// Обработчик события для кнопки "Проверить"
-document.getElementById("checkButton")!.addEventListener("click", () => {
-    const inputString = (document.getElementById("inputString") as HTMLInputElement).value;
-    const resultDiv = document.getElementById("result")!;
+// Вводные параметры
+const directory = './testDirectory'; // Путь к директории для поиска
+const searchTerm = 'example'; // Строка для поиска (по имени или содержимому)
+const searchInContent = true; // Ищем ли по содержимому файлов?
 
-    const [maxChar, maxCount] = mostFrequentCharacter(inputString);
-
-    // Отображаем результат
-    resultDiv.textContent = `Самый часто встречающийся символ: "${maxChar}", Количество повторов: ${maxCount}`;
-});
-// Определение типа для заказа
-interface Order {
-    id: number;
-    date: string;  // Дата в формате 'YYYY-MM-DD'
-    amount: number; // Сумма заказа
-}
-
-// Пример массива заказов
-const orders: Order[] = [
-    { id: 1, date: '2020-02-01', amount: 150 },
-    { id: 2, date: '2020-02-15', amount: 200 },
-    { id: 3, date: '2020-03-10', amount: 300 },
-    { id: 4, date: '2020-02-25', amount: 350 },
-    { id: 5, date: '2020-02-20', amount: 120 },
-    { id: 6, date: '2020-01-01', amount: 400 }
-];
-
-// Функция для расчета суммы заказов, сделанных в феврале 2020 года
-function calculateFebruaryTotal(orders: Order[]): number {
-    const targetMonth = '2020-02'; // Февраль 2020 года
-
-    const filteredOrders = orders.filter(order => order.date.startsWith(targetMonth));
-
-    return filteredOrders.reduce((total, order) => total + order.amount, 0);
-}
-
-// Обработчик события для кнопки "Рассчитать"
-document.getElementById("calculateButton")!.addEventListener("click", () => {
-    const resultDiv = document.getElementById("result")!;
-
-    // Рассчитываем общую сумму заказов за февраль 2020
-    const total = calculateFebruaryTotal(orders);
-
-    // Отображаем результат
-    resultDiv.textContent = `Общая сумма заказов за февраль 2020 года: ${total} руб.`;
-});
+// Запуск поиска
+searchFiles(directory, searchTerm, searchInContent);
