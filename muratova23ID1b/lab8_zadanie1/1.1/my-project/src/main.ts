@@ -1,5 +1,5 @@
-// Функция для подсчета частоты символов в строке
-function mostFrequentCharacter(s: string): [string, number] {
+// Экспортируем функцию
+export function mostFrequentCharacter(s: string): [string, number] {
   const frequencyMap: { [key: string]: number } = {};
 
   // Подсчет частоты каждого символа в строке

@@ -1,4 +1,4 @@
-import { mostFrequentCharacter } from './main';
+import { mostFrequentCharacter } from './main'; 
 
 describe('mostFrequentCharacter', () => {
     it('should return the most frequent character and its count', () => {
